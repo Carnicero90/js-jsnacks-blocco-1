@@ -32,8 +32,8 @@ for (item of corte) {
 for (item of lunghe) {
   document.getElementById('right').innerHTML += `<div class="zucchina" style="${item.style}"></div>`
 }
-$('#left').css('margin-top', `${(sommaCorte-sommaLunghe)*2}px`);
-$('#right').css('margin-top', `${(sommaLunghe-sommaCorte)*2}px`);
+$('#left').css('bottom', `${(sommaCorte-sommaLunghe)}%`);
+$('#right').css('bottom', `${(sommaLunghe-sommaCorte)}%`);
 
 // END TEST
 
