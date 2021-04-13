@@ -16,7 +16,7 @@ var sommaTotale = sumObjectsValues(zucchine, 'peso');
 // SPLIT zucchine ITEMS INTO corte AND lunghe (ACCORDING TO lunghezza)
 var corte = [];
 var lunghe= [];
-zucchine.filter((zucchina) => zucchina.lunghezza > 15 ? lunghe.push(zucchina) : corte.push(zucchina));
+zucchine.forEach((zucchina) => zucchina.lunghezza > 15 ? lunghe.push(zucchina) : corte.push(zucchina));
 
 var sommaCorte = sumObjectsValues(corte, 'peso');
 var sommaLunghe = sumObjectsValues(lunghe, 'peso');
