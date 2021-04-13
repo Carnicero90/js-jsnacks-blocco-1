@@ -1,10 +1,14 @@
 var tipiZucchine = ['bianca', 'gialla', 'rossa', 'striata', 'succulenta', 'essiccata'];
 
 // GENERATE ARRAY OF OBJECTS WITH RANDOM VALUES
-var zucchine = Array.from({length: 10}, i => i={
+var zucchine = Array.from({length: 20}, i => i={
   'tipo': getRandomItem(tipiZucchine),
   'peso':  getRandomInt(1,15),
-  'lunghezza': getRandomInt(1,30)
+  'lunghezza': getRandomInt(1,30),
+  // TEST
+  'style': `transform: rotate(${getRandomInt(1,360)}deg); 
+            left: ${getRandomInt(10,70)}%; top: ${getRandomInt(10,70)}%`
+  // END TEST
 });
 
 var sommaTotale = sumObjectsValues(zucchine, 'peso');
@@ -12,12 +16,27 @@ var sommaTotale = sumObjectsValues(zucchine, 'peso');
 // SPLIT zucchine ITEMS INTO corte AND lunghe (ACCORDING TO lunghezza)
 var corte = [];
 var lunghe= [];
-zucchine.filter((zucchina) => zucchina.lunghezza>15 ? lunghe.push(zucchina) : corte.push(zucchina));
+zucchine.filter((zucchina) => zucchina.lunghezza > 15 ? lunghe.push(zucchina) : corte.push(zucchina));
 
 var sommaCorte = sumObjectsValues(corte, 'peso');
 var sommaLunghe = sumObjectsValues(lunghe, 'peso');
 // SAFETY CHECK
 console.log(sommaCorte === sommaTotale - sommaLunghe);
+
+// TEST
+// ho testato abbastanza di getto, scusate il "disordine"
+for (item of corte) {
+  document.getElementById('left').innerHTML += `<div class="zucchina" style="${item.style}"></div>`
+}
+
+for (item of lunghe) {
+  document.getElementById('right').innerHTML += `<div class="zucchina" style="${item.style}"></div>`
+}
+$('#left').css('margin-top', `${(sommaCorte-sommaLunghe)*2}px`);
+$('#right').css('margin-top', `${(sommaLunghe-sommaCorte)*2}px`);
+
+// END TEST
+
 
 
 function sumObjectsValues(array, prop) {

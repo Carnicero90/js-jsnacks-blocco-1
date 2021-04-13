@@ -1,0 +1,58 @@
+/* COMMON
+   ======================= */
+
+/* ======================= */
+
+/* MACRO LAYOUT
+   ======================= */
+
+/* ======================= */
+
+/* MICRO LAYOUT
+   ======================= */
+   .plate-container {
+      width: 100%;
+      padding: 10%;
+   }
+.plate {
+   width: 100%;
+   position: relative;
+   margin: 8%;
+   height: 200px;
+   box-shadow: 0 0 0 5px grey,
+   0 0 0 10px white,
+   0 0 0 12px black;
+   border-radius: 50%;
+   transform: rotateX(45deg);
+   transition: margin-top 5s;
+}
+.container {
+   margin-top: 20vh
+}
+
+/* ======================= */
+
+
+/* TEST */
+
+.zucchina {
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: rotate(32deg);
+   border-bottom: 2px solid yellowgreen;
+   width: 80px;
+   height: 20px;
+   border-radius: 600px;
+   background-color: green;
+   z-index: 100;
+}
+
+#right .zucchina {
+   background-color: rgb(29, 158, 29);
+   border-left: 1px solid white;
+   border-right: 1px solid lightgray;
+   height: 50px;
+   width: 150px;
+
+}
