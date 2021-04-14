@@ -7,7 +7,7 @@ var zucchine = Array.from({length: 20}, i => i={
   'lunghezza': getRandomInt(1,30),
   // TEST
   'style': `transform: rotate(${getRandomInt(1,360)}deg); 
-            left: ${getRandomInt(10,70)}%; top: ${getRandomInt(10,70)}%`
+            left: ${getRandomInt(5,60)}%; top: ${getRandomInt(10,70)}%`
   // END TEST
 });
 
@@ -32,8 +32,10 @@ for (item of corte) {
 for (item of lunghe) {
   document.getElementById('right').innerHTML += `<div class="zucchina" style="${item.style}"></div>`
 }
-$('#left').css('bottom', `${(sommaCorte-sommaLunghe)/2}%`);
-$('#right').css('bottom', `${(sommaLunghe-sommaCorte)/2}%`);
+$('#right').css('bottom', `${(sommaCorte-sommaLunghe)/2}%`);
+$('.left p').text($('.left p').text()+sommaCorte+'kg');
+$('#left').css('bottom', `${(sommaLunghe-sommaCorte)/2}%`);
+$('.right p').text($('.right p').text()+sommaLunghe+'kg');
 
 // END TEST
 

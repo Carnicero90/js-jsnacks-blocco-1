@@ -12,13 +12,13 @@
    ======================= */
    .plate-container {
       width: 100%;
-      padding: 10%;
+      padding: 5%;
    }
 .plate {
    width: 100%;
    position: relative;
    bottom: 0;
-   margin: 8%;
+   margin: 3%;
    height: 200px;
    box-shadow: 0 0 0 5px grey,
    0 0 0 10px white,
